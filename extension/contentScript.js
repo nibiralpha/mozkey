@@ -16,7 +16,7 @@ chrome.runtime.onMessage.addListener(
                     vol = 0;
                 }
                 stack.push(
-                    { keyword: rows[i].innerHTML, number: i, vol: vol }
+                    { keyword: rows[i].innerHTML, number: i, vol: vol, c: false }
                 );
             }
             console.log(stack);
