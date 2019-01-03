@@ -15,19 +15,21 @@ chrome.runtime.onMessage.addListener(
                 }else{
                     vol = 0;
                 }
+                if(vol > 999){
                 stack.push(
                     { keyword: rows[i].innerHTML, number: i, vol: vol, c: false }
-                );
+                    );
+                }
             }
-            console.log(stack);
+            // console.log(stack);
             
             $.post("http://127.0.0.1:3000/keyword",
                 {
                     keywords: stack
                 },
                 function (data, status) {
-                    console.log(data);
-                    console.log(status);
+                    // console.log(data);
+                    // console.log(status);
                 });
         }
 
